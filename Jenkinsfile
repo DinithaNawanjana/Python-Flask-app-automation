@@ -1,11 +1,12 @@
 pipeline {
     agent any 
 
-    environment(
+    environment{
         DOCKER_CREDS= credentials('docker-hub-login')
         REGISTRY_USER ='dinitha282'
+    }
+        
 
-    )
 
     stages {
         stage ('checkout from github'){
