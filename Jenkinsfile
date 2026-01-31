@@ -31,10 +31,10 @@ pipeline {
         }
         stage ('Run image'){
             steps{
-                echo "Deployoing image..."
+            echo "Deployoing image..."
             sh 'docker stop my-website || true'
             sh 'docker rm my-website || true'
-
+            echo "Running image..."
             sh "docker run -d -p 5000:5000 --name my-website ${REGISTRY_USER}/my-web-app:v1"
             }
             
