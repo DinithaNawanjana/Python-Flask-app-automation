@@ -11,5 +11,5 @@ def hello():
     """
 
 if __name__ == "__main__":
-    # 0.0.0.0 කියන්නේ ඕනෑම කෙනෙක්ට Access කරන්න දෙන්න කියන එකයි
+    # anyone can acees in 0.0.0.0
     app.run(host='0.0.0.0', port=5000)
