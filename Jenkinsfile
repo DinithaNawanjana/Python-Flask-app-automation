@@ -15,6 +15,19 @@ pipeline {
             }
             
         }
+        stage ('Code quality Checking...'){
+            steps{
+                echo "Code quality Checking..."
+                script{
+                    def scannerHome= tool 'SonarScanner'
+                    
+                    withSonarQubeEnv('SonarServer'){
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+            
+        }
         stage ('Build image'){
             steps{
                 echo "Building image..."
